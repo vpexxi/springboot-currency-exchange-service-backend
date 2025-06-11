@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: currency-exchange-app   # ← your existing app name
+
+  # ── H2 DataSource & JPA ────────────────────────────────────────────────
+  datasource:
+    url: jdbc:h2:mem:currencydb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa            # default H2 user
+    password:               # default H2 has no password
+  jpa:
+    hibernate:
+      ddl-auto: update      # auto-create/update tables from your @Entity classes
+    show-sql: true          # log SQL statements in console
+
+  # ── H2 Web Console (optional but handy) ─────────────────────────────────
+  h2:
+    console:
+      enabled: true         # enable the browser UI
+      path: /h2-console     # visit http://localhost:8080/h2-console
+
+# ── External ExchangeRate API configuration ──────────────────────────────
+exchange:
+  api:
+    url: https://v6.exchangerate-api.com/v6   # base URL for live-rate calls
+    key: 843f7dabaaa20b4ff3aa2328             # ← your actual API key
