@@ -133,19 +133,4 @@ currency-exchange-app/
 * **Testing**: JUnit 5, Mockito, Spring Boot Test
 * **API Documentation**: Postman collections for endpoint validation
 
----
 
-## 🎯 Why This Project?
-
-This repository demonstrates a full Spring Boot microservice implementation and highlights core backend engineering skills:
-
-1. **Project Bootstrapping** with Maven and Spring Initializr
-2. **External API Integration** using WebClient
-3. **Database Modeling** with JPA Entities and Hibernate
-4. **Data Access** via Spring Data JPA repositories
-5. **Business Logic Layering** with service interfaces and implementations
-6. **REST API Exposure** in controllers with proper status codes
-7. **Robust Error Handling** using custom exceptions and global handlers
-8. **Automated Testing** and API validation with Postman
-
-These skills are directly transferable to a Software Development Engineer (SDE) role, demonstrating your ability to design, implement, and deliver production-ready backend services.
