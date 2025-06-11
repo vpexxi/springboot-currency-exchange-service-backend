@@ -51,14 +51,31 @@ currency-exchange-app/
    git clone https://github.com/your-username/springboot-currency-exchange-service-backend.git
    cd springboot-currency-exchange-service-backend
    ```
-2. **Configure your API key** in `src/main/resources/application.yml`
+2. **Obtain and configure your API key**
 
-   ```yaml
+   1. Sign up for a free key at [ExchangeRate API](https://www.exchangerate-api.com).
+   2. In your account dashboard, copy your **API Key**.
+   3. Open `src/main/resources/application.yml` and replace `YOUR_API_KEY`:
+
+      ```yaml
+      exchange:
+        api:
+          url: https://v6.exchangerate-api.com/v6  # Base URL for all requests
+          key: <YOUR_API_KEY>                     # ← Paste your key here
+      ```
+   4. Verify you can fetch live rates:
+
+      ```bash
+      curl https://v6.exchangerate-api.com/v6/$YOUR_API_KEY/latest/USD
+      ```
+
+```yaml
    exchange:
      api:
        url: https://v6.exchangerate-api.com/v6
        key: YOUR_API_KEY   # Replace with your key from ExchangeRate API
-   ```
+```
+
 3. **Build & run** the application
 
    ```bash
@@ -116,4 +133,19 @@ currency-exchange-app/
 * **Testing**: JUnit 5, Mockito, Spring Boot Test
 * **API Documentation**: Postman collections for endpoint validation
 
+---
 
+## 🎯 Why This Project?
+
+This repository demonstrates a full Spring Boot microservice implementation and highlights core backend engineering skills:
+
+1. **Project Bootstrapping** with Maven and Spring Initializr
+2. **External API Integration** using WebClient
+3. **Database Modeling** with JPA Entities and Hibernate
+4. **Data Access** via Spring Data JPA repositories
+5. **Business Logic Layering** with service interfaces and implementations
+6. **REST API Exposure** in controllers with proper status codes
+7. **Robust Error Handling** using custom exceptions and global handlers
+8. **Automated Testing** and API validation with Postman
+
+These skills are directly transferable to a Software Development Engineer (SDE) role, demonstrating your ability to design, implement, and deliver production-ready backend services.
